@@ -164,6 +164,7 @@ a {
     font-size: 14px;
     color: rgba(150, 150, 150, 1)!important;
     padding: 5px 10px;
+    border-bottom: 2px solid transparent;
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
@@ -222,6 +223,9 @@ a {
     font-family: 'DidactGothic', sans-serif;
     line-height: 50px;
     height: 50px;
+    width: 100%;
+    padding: 0px 20vw;
+    background-color: rgba(0, 0 ,0 , 0.65);
 }
 
 .index .banner .top-info .ciudad,
@@ -466,7 +470,7 @@ a {
 
 .index .servicios .tab-content .tab-pane .col-sm-5 .img-container img {
     position: absolute;
-    min-height: 100%;
+    height: 100%;
     max-width: none;
     top: 50%;
     left: 50%;
@@ -1374,13 +1378,13 @@ a {
 
 .detalle-noticia .noticia .container .left-side,
 .detalle-noticia .noticia .container .right-side {
-    height: 300px;
+    height: auto;
     overflow: hidden;
 }
 
 .detalle-noticia .noticia .container .left-side .img-container {
     position: relative;
-    height: 100%;
+    height: 300px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 50px;
@@ -2198,7 +2202,7 @@ footer .footer-rights a:hover {
     }
     .detalle-noticia .noticia .container .left-side,
     .detalle-noticia .noticia .container .right-side {
-        height: 350px;
+        height: auto;
     }
     .detalle-noticia .noticia .container .left-side .img-container {
         height: 200px;

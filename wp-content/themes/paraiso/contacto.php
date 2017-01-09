@@ -14,10 +14,10 @@
                         </a>
                     </div>
                     <div class="link-container">
-                        <a target="_blank" href="">
+                        <a target="_blank" href="https://www.facebook.com/">
                             <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/contacto/fb.png" alt="">
                         </a>
-                        <a target="_blank" href="">
+                        <a target="_blank" href="https://www.tripadvisor.com.mx/">
                             <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/contacto/trip.png" alt="">
                         </a>
                     </div>

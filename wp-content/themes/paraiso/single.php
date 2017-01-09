@@ -11,13 +11,13 @@
             <h1>
                 <?php echo get_the_title(); ?>
             </h1>
-            <div class="col-xs-6 left-side">
+            <div class="col-sm-6 left-side">
                 <div class="img-container">
                     <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
                 </div>
             </div>
-            <div class="col-xs-6 right-side">
-                <div class="content vertical-align">
+            <div class="col-sm-6 right-side">
+                <div class="content">
                     <p class="date">
                         <?php echo get_the_date('d-m-Y'); ?>
                     </p>
@@ -39,65 +39,65 @@
                     </p>
                 </div>
             </div>
-            <?php
-            $counter = 0;
-            query_posts('cat='.$categoryID.'&orderby=rand');
-            while (have_posts()) : the_post();
-            if($the_post_name != get_the_title() && $counter != 2) {
-            ?>
-            <?php
-                if($counter == 0)
-                {
-                    echo '<div class="col-xs-6 relacionada primero">';
-                }
-                else {
-                    echo '<div class="col-xs-6 relacionada">';
-                }
-            ?>
-            <a href="<?php echo get_the_permalink(); ?>">
-                <div class="col-xs-5 hidden-xs">
-                    <div class="img-container">
-                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+            <div class="col-sm-12"><?php
+                $counter = 0;
+                query_posts('cat='.$categoryID.'&orderby=rand');
+                while (have_posts()) : the_post();
+                if($the_post_name != get_the_title() && $counter != 2) {
+                ?>
+                <?php
+                    if($counter == 0)
+                    {
+                        echo '<div class="col-xs-6 relacionada primero">';
+                    }
+                    else {
+                        echo '<div class="col-xs-6 relacionada">';
+                    }
+                ?>
+                <a href="<?php echo get_the_permalink(); ?>">
+                    <div class="col-xs-5 hidden-xs">
+                        <div class="img-container">
+                            <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-7">
-                    <h3>
-                        <?php
-                if (strlen($post->post_title) > 20)
-                { 
-                    echo substr(the_title($before = '', $after = '', FALSE), 0, 20) . ' [...]'; 
+                    <div class="col-xs-7">
+                        <h3>
+                            <?php
+                    if (strlen($post->post_title) > 20)
+                    { 
+                        echo substr(the_title($before = '', $after = '', FALSE), 0, 20) . ' [...]'; 
+                    }
+                    else
+                    {
+                        the_title();
+                    }
+                            ?>
+                        </h3>
+                        <p class="date">
+                            <?php echo get_the_date('d-m-Y'); ?>
+                        </p>
+                        <p class="text">
+                            <?php
+                    if ( strlen(get_the_content()) > 80)
+                    {
+                        echo substr(get_the_content(), 0,80).' [...]';
+                    }
+                    else
+                    {
+                        echo get_the_content();
+                    }
+                            ?>
+                        </p>
+                    </div>
+                </a>
+                <?php
+                    echo '</div>';
+                ?>
+                <?php
+                    $counter++;
                 }
-                else
-                {
-                    the_title();
-                }
-                        ?>
-                    </h3>
-                    <p class="date">
-                        <?php echo get_the_date('d-m-Y'); ?>
-                    </p>
-                    <p class="text">
-                        <?php
-                if ( strlen(get_the_content()) > 80)
-                {
-                    echo substr(get_the_content(), 0,80).' [...]';
-                }
-                else
-                {
-                    echo get_the_content();
-                }
-                        ?>
-                    </p>
-                </div>
-            </a>
-            <?php
-                echo '</div>';
-            ?>
-            <?php
-                $counter++;
-            }
-            endwhile;
-            ?>
+                endwhile;
+                ?></div>
             <div class="col-xs-12 bottom">
                 <nav id="post-entries">
                     <div class="row no-margin">
